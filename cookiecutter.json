@@ -3,5 +3,5 @@
   "app_name": "{{ cookiecutter.name|replace(' ', '') }}",
   "repo_name": "{{ cookiecutter.app_name|lower }}-android",
   "package_name": "com.nickelfox.{{ cookiecutter.app_name|lower }}",
-  "package_name_dir": "{{ cookiecutter.app_name.replace('.', '/') }}"
+  "package_name_dir": "{{ cookiecutter.package_name.replace('.', '/') }}"
 }

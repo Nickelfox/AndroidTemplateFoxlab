@@ -1,6 +1,6 @@
 {
   "replace": {
-    "TemplateProject": "project_name",
+    "TemplateProject": "app_name",
     "templete_dir": "package_name_dir"
   },
   "ignore": [
