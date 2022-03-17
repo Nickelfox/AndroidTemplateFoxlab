@@ -1,0 +1,11 @@
+{
+  "replace": {
+    "TemplateProject": "project_name",
+    "templete_dir": "package_name_dir"
+  },
+  "ignore": [
+    ".",
+    "..",
+    ".git"
+  ]
+}
