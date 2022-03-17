@@ -5,7 +5,7 @@
     style="@style/Background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="templete_dir.ui.MainActivity">
+    tools:context="template_package.ui.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"

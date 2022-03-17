@@ -12,7 +12,7 @@ android {
     buildToolsVersion "32.0.0"
 
     defaultConfig {
-        applicationId "com.innoviti.geniemobile"
+        applicationId "template_package.com"
         minSdkVersion 21
         targetSdkVersion 32
         versionCode 1
@@ -38,12 +38,10 @@ android {
     productFlavors {
         dev {
             dimension "build"
-            applicationId "com.innoviti.geniemobile"
             buildConfigField "String", "BASE_URL", "\"$DEV_BASE_URL\""
         }
         prod {
             dimension "build"
-            applicationId "com.innoviti.geniemobile"
             buildConfigField "String", "BASE_URL", "\"$PROD_BASE_URL\""
         }
     }
