@@ -33,6 +33,7 @@ allprojects {
 
 ext {
     DEV_BASE_URL = "http://c46713df3f30.ngrok.io/"
+    STAGING_BASE_URL = "http://c46713df3f30.ngrok.io/"
     PROD_BASE_URL = "http://c46713df3f30.ngrok.io/"
 
 }

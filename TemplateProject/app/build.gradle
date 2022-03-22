@@ -40,6 +40,10 @@ android {
             dimension "build"
             buildConfigField "String", "BASE_URL", "\"$DEV_BASE_URL\""
         }
+        staging {
+            dimension "build"
+            buildConfigField "String", "BASE_URL", "\"$STAGING_BASE_URL\""
+        }
         prod {
             dimension "build"
             buildConfigField "String", "BASE_URL", "\"$PROD_BASE_URL\""

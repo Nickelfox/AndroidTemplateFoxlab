@@ -1,0 +1,5 @@
+import_from_git(
+  url: "git@bitbucket.org:nickelfox/fastlane.git",
+  branch: "flutter-fix",
+  path: "Android/fastlane/Fastfile"
+)
