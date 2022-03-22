@@ -2,9 +2,9 @@
 
 APP_NAME="{{ cookiecutter.app_name }}"
 REPO_URL="{{ cookiecutter.repo_url }}"
+REPO_URL_TRIMMED="$(echo -e "${REPO_URL}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
 
-
-if [[ $REPO_URL == "Enter the repo url" || "$(trim $REPO_URL)" == ""]]
+if [[ $REPO_URL_TRIMMED == "Enter the repo url" || $REPO_URL_TRIMMED == ""]]
 then
     echo -e "\n\n\n****************** You have not provided the repo url, now you have to setup git manually  ******************\n\n\n"
 else
