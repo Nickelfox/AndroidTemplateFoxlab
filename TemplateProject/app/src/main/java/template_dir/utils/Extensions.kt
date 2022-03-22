@@ -17,6 +17,7 @@ fun Long.postDelayed(handlerData: () -> Unit) {
 
 fun Activity.getActivity() = this
 
+
 val Exception?.localizedException: LocalisedException
     get() {
         return when (this) {

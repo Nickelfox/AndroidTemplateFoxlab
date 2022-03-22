@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import template_package.data.models.CategoriesModel
 import template_package.data.models.CustomResult
 import template_package.data.respository.RemoteRepository
+import template_package.utils.Constants.EMPTY_STRING
 import javax.inject.Inject
 
 @HiltViewModel
@@ -37,7 +38,7 @@ class SampleCategoriesViewModelRemote @Inject constructor(private val repo: Remo
                 }
                 is CustomResult.Error -> {
                     _state.value = UIState.Loading(GONE)
-                    _state.postValue(UIState.Error(result.exception.message ?: ""))
+                    _state.postValue(UIState.Error(result.exception.message ?: EMPTY_STRING))
                 }
             }
         }

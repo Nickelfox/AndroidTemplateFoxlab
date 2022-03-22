@@ -6,6 +6,7 @@ import template_package.data.models.CategoriesModel
 import template_package.data.models.CustomResult
 import template_package.data.network.Api
 import template_package.data.network.SafeApiRequest
+import template_package.utils.Constants.EMPTY_STRING
 import javax.inject.Inject
 
 class RemoteRepository @Inject constructor(
@@ -40,7 +41,7 @@ class RemoteRepository @Inject constructor(
                         val map = result.data.data.map { category ->
                             CategoriesModel(imageResult.data.data.find {
                                 it.imageId == category.categoryId
-                            }?.imageUrl ?: "", category.categoryDisplayName, category.isActive)
+                            }?.imageUrl ?: EMPTY_STRING, category.categoryDisplayName, category.isActive)
                         }
                         CustomResult.Success(map)
                     }

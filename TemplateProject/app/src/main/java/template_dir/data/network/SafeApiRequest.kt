@@ -1,11 +1,11 @@
 package template_package.data.network
 
-import template_package.utils.ApiException
-import template_package.data.models.CustomResult
-import template_package.utils.UnAuthorizedException
-import template_package.utils.localizedException
 import org.json.JSONObject
 import retrofit2.Response
+import template_package.data.models.CustomResult
+import template_package.utils.ApiException
+import template_package.utils.UnAuthorizedException
+import template_package.utils.localizedException
 
 abstract class SafeApiRequest {
 
@@ -38,10 +38,17 @@ abstract class SafeApiRequest {
     @Throws(Exception::class)
     fun <T : Any> Response<T>.getApiException(): Exception {
         val error = errorBody()?.string()
-        val errorObj = JSONObject(error ?: "{}")
-        if (errorObj.getInt("code") == 401) {
+        val errorObj = JSONObject(error ?: EMPTY_OBJECT)
+        if (errorObj.getInt(CODE) == 401) {
             return UnAuthorizedException()
         }
-        return ApiException(errorObj.getJSONObject("error").getJSONArray("message").getString(0))
+        return ApiException(errorObj.getJSONObject(ERROR).getJSONArray(MESSAGE).getString(0))
+    }
+
+    companion object {
+        private const val EMPTY_OBJECT = "{}"
+        private const val CODE = "{}"
+        private const val ERROR = "error"
+        private const val MESSAGE = "message"
     }
 }

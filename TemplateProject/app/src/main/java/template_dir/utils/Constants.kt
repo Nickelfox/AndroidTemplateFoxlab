@@ -2,6 +2,7 @@ package template_package.utils
 
 //TODO: replace below constants with your own
 object Constants {
-    const val CONST1 = 1
-    const val CONST2 = "2"
+    const val DATABASE_NAME = "TemplateProject.db"
+    const val SUCCESS = "Success"
+    const val EMPTY_STRING = "Success"
 }

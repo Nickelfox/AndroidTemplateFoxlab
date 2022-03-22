@@ -1,5 +1,6 @@
 package template_package.data.network
 
+import android.annotation.SuppressLint
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import okhttp3.Interceptor
@@ -12,6 +13,8 @@ import java.nio.charset.StandardCharsets
 import javax.inject.Inject
 
 //TODO : You can delete this class is not required
+@SuppressLint("HardcodedStrings")
+//TODO: hard coded string is required here
 class FakeInterceptor @Inject constructor(@ApplicationContext private val context: Context) :
     Interceptor {
     @Throws(IOException::class)

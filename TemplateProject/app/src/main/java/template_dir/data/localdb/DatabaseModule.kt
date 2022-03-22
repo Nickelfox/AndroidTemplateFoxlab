@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import template_package.utils.Constants.DATABASE_NAME
 import javax.inject.Singleton
 
 @Module
@@ -20,6 +21,6 @@ object DatabaseModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, GenieDatabase::class.java, "TemplateProject.db")
+        Room.databaseBuilder(context, GenieDatabase::class.java, DATABASE_NAME)
             .fallbackToDestructiveMigration().build()
 }

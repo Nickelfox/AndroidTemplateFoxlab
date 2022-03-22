@@ -1,5 +1,6 @@
 package template_package.data.network
 
+import android.annotation.SuppressLint
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +20,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    //TODO: hardcoded string required here
+    @SuppressLint("HardcodedStrings")
     @Provides
     @Singleton
     fun provideTokenInterceptor(preferences: UserPreferences) = Interceptor { chain ->
@@ -61,4 +64,5 @@ object NetworkModule {
         builder.client(client)
         return builder.build().create(Api::class.java)
     }
+
 }
