@@ -1,4 +1,4 @@
-package template_package.data.local
+package template_dir.data.localdb
 
 import android.content.Context
 import androidx.room.Room
