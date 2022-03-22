@@ -4,7 +4,7 @@ APP_NAME="{{ cookiecutter.app_name }}"
 REPO_URL="{{ cookiecutter.repo_url }}"
 
 
-if [[ $REPO_URL == "Enter the repo url" || $(trim $REPO_URL) == ""]]
+if [[ $REPO_URL == "Enter the repo url" || "$(trim $REPO_URL)" == ""]]
 then
     echo -e "\n\n\n****************** You have not provided the repo url, now you have to setup git manually  ******************\n\n\n"
 else
