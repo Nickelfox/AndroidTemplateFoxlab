@@ -1,4 +1,4 @@
-package template_package.ui.categories
+package template_package.ui.samleremotecategories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import template_package.com.R
 import template_package.data.models.CategoriesModel
 import template_package.com.databinding.ListItemCategoryBinding
 
-class CategoriesRecyclerAdapter : RecyclerView.Adapter<CategoriesRecyclerAdapter.ViewHolder>() {
+class CategoriesRecyclerAdapterRemote : RecyclerView.Adapter<CategoriesRecyclerAdapterRemote.ViewHolder>() {
 
     private var list = mutableListOf<CategoriesModel>()
     private var listener: InteractionListener? = null

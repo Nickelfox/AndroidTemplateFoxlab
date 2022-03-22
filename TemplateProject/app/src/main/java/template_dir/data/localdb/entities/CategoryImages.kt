@@ -1,4 +1,4 @@
-package template_package.data.db.entities
+package template_package.data.localdb.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

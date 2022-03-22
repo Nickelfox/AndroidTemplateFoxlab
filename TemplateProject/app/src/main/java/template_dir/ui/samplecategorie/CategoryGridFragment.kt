@@ -1,4 +1,4 @@
-package template_package.ui.categories
+package template_package.ui.samplecategorie
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +10,7 @@ import template_package.data.models.CategoriesModel
 import template_package.com.databinding.FragmentCategoryGridBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+//TODO: remove this whole package if you are NOT USING ~~~~~~~ LOCAL DATABASE ~~~~~~~
 @AndroidEntryPoint
 class CategoryGridFragment : Fragment(),
     CategoriesRecyclerAdapter.InteractionListener {

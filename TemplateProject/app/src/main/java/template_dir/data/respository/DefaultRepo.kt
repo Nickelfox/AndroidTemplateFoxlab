@@ -1,9 +1,10 @@
 package template_package.data.respository
 
-import template_package.data.db.GenieDatabase
+import template_package.data.localdb.GenieDatabase
 import template_package.data.models.CustomResult
 import javax.inject.Inject
 
+//TODO: remove this class if you are NOT USING ~~~~~~~ LOCAL DATABASE ~~~~~~~
 class DefaultRepo @Inject constructor(
     private val remoteRepo: RemoteRepository,
     private val database: GenieDatabase

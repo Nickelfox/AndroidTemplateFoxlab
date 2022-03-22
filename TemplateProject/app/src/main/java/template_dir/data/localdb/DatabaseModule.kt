@@ -1,8 +1,7 @@
-package template_dir.data.localdb
+package template_package.data.localdb
 
 import android.content.Context
 import androidx.room.Room
-import template_package.data.db.GenieDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

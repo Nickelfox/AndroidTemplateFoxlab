@@ -10,13 +10,28 @@
         android:name="template_package.ui.samplefragment.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" >
+
+        <!--TODO: remove this action if you are NOT USING ~~~~~~~ LOCAL DATABASE ~~~~~~~-->
         <action
             android:id="@+id/actionCategoryGridFragment"
             app:destination="@id/categoryGridFragment" />
+
+        <!--TODO: remove this action if you are USING ~~~~~~~ LOCAL DATABASE ~~~~~~~-->
+        <action
+            android:id="@+id/actionCategoryGridFragmentRemote"
+            app:destination="@id/categoryGridFragmentRemote" />
     </fragment>
+
+    <!--TODO: remove this fragment if you are NOT USING ~~~~~~~ LOCAL DATABASE ~~~~~~~-->
     <fragment
         android:id="@+id/categoryGridFragment"
-        android:name="template_package.ui.categories.CategoryGridFragment"
+        android:name="template_package.ui.samplecategorie.CategoryGridFragment"
         android:label="fragment_category_grid"
         tools:layout="@layout/fragment_category_grid" />
+
+    <!--TODO: remove this fragment if you are USING ~~~~~~~ LOCAL DATABASE ~~~~~~~-->
+    <fragment
+        android:id="@+id/categoryGridFragmentRemote"
+        android:name="template_package.ui.samleremotecategories.CategoryGridFragmentRemote"
+        android:label="CategoryGridFragmentRemote" />
 </navigation>

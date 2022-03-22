@@ -1,4 +1,4 @@
-package template_package.ui.categories
+package template_package.ui.samplecategorie
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

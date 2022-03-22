@@ -20,8 +20,15 @@ class BlankFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentBlankBinding.inflate(inflater, container, false)
+
+        //TODO: remove this button and listener if you are NOT USING ~~~~~~~ LOCAL DATABASE ~~~~~~~
         binding.btnCallCategories.setOnClickListener {
             findNavController().navigate(BlankFragmentDirections.actionCategoryGridFragment())
+        }
+
+        //TODO: remove this button and listener if you are USING ~~~~~~~ LOCAL DATABASE ~~~~~~~
+        binding.btnCallCategoriesRemote.setOnClickListener {
+            findNavController().navigate(BlankFragmentDirections.actionCategoryGridFragmentRemote())
         }
         return binding.root
     }

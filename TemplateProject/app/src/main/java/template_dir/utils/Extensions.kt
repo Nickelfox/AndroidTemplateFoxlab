@@ -3,6 +3,8 @@ package template_package.utils
 import android.app.Activity
 import android.os.Handler
 import android.os.Looper
+import android.view.View
+import com.google.android.material.snackbar.Snackbar
 import java.io.IOException
 
 //TODO: remove the pre-defined extensions if not needed
@@ -23,3 +25,7 @@ val Exception?.localizedException: LocalisedException
             else -> SomethingWentWrongException(this?.localizedMessage)
         }
     }
+
+fun View.showSnackBar(msg: String, length: Int = Snackbar.LENGTH_SHORT) {
+    Snackbar.make(this, msg, length).show()
+}

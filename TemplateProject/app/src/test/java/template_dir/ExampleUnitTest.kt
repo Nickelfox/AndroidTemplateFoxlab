@@ -1,4 +1,4 @@
-package template_dir
+package template_package
 
 import org.junit.Test
 

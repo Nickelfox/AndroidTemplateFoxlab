@@ -1,12 +1,12 @@
-package template_package.data.db.dao
+package template_package.data.localdb.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import template_package.data.db.entities.Categories
-import template_package.data.db.entities.CategoryImages
+import template_package.data.localdb.entities.Categories
+import template_package.data.localdb.entities.CategoryImages
 import template_package.data.models.CategoriesModel
 
 @Dao

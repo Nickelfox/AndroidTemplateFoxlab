@@ -85,7 +85,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$glide"
 
 
-    /////Room
+    /////Room //TODO: remove Room dependencies if you are NOT USING ~~~~~~~ LOCAL DATABASE ~~~~~~~
     implementation "androidx.room:room-runtime:$room"
     implementation "androidx.room:room-ktx:$room"
     kapt "androidx.room:room-compiler:$room"

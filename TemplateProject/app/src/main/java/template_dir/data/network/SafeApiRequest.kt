@@ -21,7 +21,7 @@ abstract class SafeApiRequest {
         }
     }
 
-    //TODO: delete is not in use
+    //TODO: delete if not in use
     @Throws(Exception::class)
     suspend fun <T : Any> apiRequestWithException(call: suspend () -> Response<T>): T {
         return try {
