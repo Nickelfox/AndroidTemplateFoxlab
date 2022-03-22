@@ -6,7 +6,7 @@ REPO_URL_TRIMMED="$(echo -e "${REPO_URL}" | sed -e 's/^[[:space:]]*//' -e 's/[[:
 
 echo -e "\n\n\n****************** $REPO_URL_TRIMMED  ******************\n\n\n"
 
-if [[ $REPO_URL_TRIMMED == "Enter the repo url" || $REPO_URL_TRIMMED == ""]]
+if [[ $REPO_URL_TRIMMED == "Enter the repo url" || $REPO_URL_TRIMMED == "" ]]
 then
     echo -e "\n\n\n****************** You have not provided the repo url, now you have to setup git manually  ******************\n\n\n"
 else
