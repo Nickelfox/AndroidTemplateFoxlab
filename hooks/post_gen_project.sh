@@ -20,28 +20,14 @@ else
     git checkout -b staging
     git checkout -b develop
     #develop at last so you land on develop branch
-    echo -e "\n\n\n****************** Pushing code in all relevant branches as well ******************\n\n\n"
+    echo -e "\n\n\n****************** Pushing code in all relevant branches ******************\n\n\n"
     git push -f origin staging
     git push -f origin develop
 fi
 
-trim()
-{
-    local trimmed="$1"
-    # Strip leading spaces.
-    while [[ $trimmed == ' '* ]]; do
-       trimmed="${trimmed## }"
-    done
-    # Strip trailing spaces.
-    while [[ $trimmed == *' ' ]]; do
-        trimmed="${trimmed%% }"
-    done
-    echo "$trimmed"
-}
-
 
 echo -e "\n\n\n******************"
-echo -e "Important Note!!!!!!"
+echo -e "!!!!!!!!!!!!!!!!!!!!! IMPORTANT NOTE !!!!!!!!!!!!!!!!!!!!!"
 echo -e "Check for (TODO) section in Android Studio's bottom bar and read all the TODO comments in every file and take action according to your preference.
 After that delete all the todo comments, clean the project and then run it."
 echo -e "******************\n\n\n"
