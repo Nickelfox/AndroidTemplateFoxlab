@@ -1,10 +1,10 @@
 package com.nickelfox.androidlintrules
 
 import com.android.tools.lint.detector.api.*
-import com.intellij.psi.PsiClassType
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiMethod
-import org.jetbrains.uast.*
+import org.jetbrains.uast.UAnnotation
+import org.jetbrains.uast.UElement
 
 @Suppress("UnstableApiUsage")
 class DeprecationDetector : Detector(), SourceCodeScanner {
@@ -27,49 +27,10 @@ class DeprecationDetector : Detector(), SourceCodeScanner {
     ) {
         method?.let {
             if (it.isDeprecated || it.containingClass?.isDeprecated == true)
-                reportUsage(context, usage, annotation)
+                reportUsage(context, usage)
         }
     }
 
-    private fun isValidExperimentalUsage(
-        context: JavaContext,
-        usage: UElement,
-        annotation: UAnnotation
-    ): Boolean {
-
-        // Feature annotation (ex. @TimeTravel) that is @Experimental
-        val featureName = (annotation.uastParent as? UClass)
-            ?.qualifiedName ?: return false
-
-        // Find the nearest enclosing annotated element
-        var element: UAnnotated? = if (usage is UAnnotated) {
-            usage
-        } else {
-            usage.getParentOfType(UAnnotated::class.java)
-        }
-
-        while (element != null) {
-            val annotations = context.evaluator.getAllAnnotations(element, false)
-
-            // Is the element itself part of the same experimental
-            // feature set, e.g. annotated with @TimeTravelExperiment?
-            if (annotations.any { it.qualifiedName == featureName })
-                return true
-
-            // Or does it explicitly opt-in as a user, e.g.
-            // annotated with @UseExperimental(TimeTravelExperiment.class)?
-            if (annotations
-                    .filter { annot -> annot.qualifiedName == "kotlin.UseExperimental" }
-                    .mapNotNull { annot -> annot.attributeValues.getOrNull(0) }
-                    .any { attr -> attr.getFullyQualifiedName(context) == featureName }
-            )
-                return true
-
-            // Traverse to the next enclosing annotated element
-            element = element.getParentOfType(UAnnotated::class.java)
-        }
-        return false
-    }
 
 
     /**
@@ -77,8 +38,7 @@ class DeprecationDetector : Detector(), SourceCodeScanner {
      */
     private fun reportUsage(
         context: JavaContext,
-        usage: UElement,
-        annotation: UAnnotation
+        usage: UElement
     ) {
         //val useAnnotation = (annotation.uastParent as? UClass)?.qualifiedName ?: return
 
@@ -114,13 +74,4 @@ class DeprecationDetector : Detector(), SourceCodeScanner {
             implementation = IMPLEMENTATION
         )
     }
-}
-
-/**
- * Returns the fully-qualified class name for a given attribute value, if any.
- */
-private fun UNamedExpression?.getFullyQualifiedName(context: JavaContext): String? {
-    val exp = this?.expression
-    val type = if (exp is UClassLiteralExpression) exp.type else exp?.evaluate()
-    return (type as? PsiClassType)?.let { context.evaluator.getQualifiedName(it) }
 }
