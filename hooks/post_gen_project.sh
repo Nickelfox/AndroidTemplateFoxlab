@@ -34,4 +34,7 @@ echo -e "******************\n\n\n"
 
 echo -e "\n\n\n************************* $APP_NAME setup completed -> Happy coding :) *************************\n\n"
 
-
+if [ "$OSTYPE" == "msys" ]
+then
+$SHELL
+fi
