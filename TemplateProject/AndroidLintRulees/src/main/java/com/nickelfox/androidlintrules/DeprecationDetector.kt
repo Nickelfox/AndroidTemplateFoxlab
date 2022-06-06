@@ -44,7 +44,7 @@ class DeprecationDetector : Detector(), SourceCodeScanner {
 
         context.report(
             ISSUE, usage, context.getNameLocation(usage), """
-            Ye deprecated method hai, ise mat use kar chutiye
+            Use of deprecated methods is prohibited in Nickelfox, Please use non deprecated alternates.
         """.trimIndent()
         )
 
