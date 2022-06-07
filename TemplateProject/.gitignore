@@ -11,3 +11,6 @@ local.properties
 
 
 
+/app/dev/
+/app/staging/
+/app/prod/
